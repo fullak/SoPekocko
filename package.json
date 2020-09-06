@@ -26,6 +26,7 @@
     "core-js": "^2.5.4",
     "express": "^4.17.1",
     "mongoose": "^5.10.3",
+    "mongoose-unique-validator": "^2.0.3",
     "rxjs": "~6.3.3",
     "zone.js": "~0.8.26"
   },
