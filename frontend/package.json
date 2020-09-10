@@ -29,6 +29,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.3",
     "mongoose-unique-validator": "^2.0.3",
+    "node-sass": "^4.14.1",
     "rxjs": "~6.3.3",
     "zone.js": "~0.8.26"
   },
