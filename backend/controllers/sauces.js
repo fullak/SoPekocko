@@ -11,7 +11,7 @@ exports.createSauce = (req, res, next) => {
     likes: 0,
     dislikes: 0,
     createdBy: "abc"
-  });
+  }); 
   console.log(sauce);
   sauce.save().then(
     () => {
