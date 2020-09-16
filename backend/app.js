@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const sauceRoutes = require('./routes/sauces');
 const userRoutes = require('./routes/users');
 const path = require('path');
+const helmet = require('helmet'); //protéger l'application de certaines des vulnérabilités bien connues du Web
 
 mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}${process.env.DB_HOST}/${process.env.DB_COLL}?retryWrites=true&w=majority`,
 	{ useNewUrlParser: true,
@@ -27,6 +28,7 @@ mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD
   });
   
 app.use(bodyParser.json());
+app.use(helmet());
 app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use('/api/sauces', sauceRoutes);
 app.use('/api/auth', userRoutes);
