@@ -25,7 +25,7 @@ mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD
       "GET, POST, PUT, DELETE, PATCH, OPTIONS"
     );
     next();
-  });
+  }); 
   
 app.use(bodyParser.json());
 app.use(helmet());
