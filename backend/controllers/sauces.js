@@ -1,4 +1,4 @@
-const Sauce = require("../models/Sauces");
+const Sauce = require("../models/sauces");
 const fs = require("fs");
 
 exports.createSauce = (req, res, next) => {  
@@ -49,19 +49,7 @@ exports.modifySauce = (req, res, next) => {
     ...JSON.parse(req.body.sauce),
     imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
    } : { ...req.body };
-  const sauce = new Sauce({ 
-    _id: req.params.id,
-    userId: req.body.userId,
-    name: req.params.name,
-    manufacturer: req.params.manufacturer,
-    description: req.body.description,
-    mainPepper: req.body.mainPepper,
-    imageUrl: req.body.imageUrl,
-    likes: req.body.likes,
-    dislikes: req.body.dislikes,
-    usersLiked: req.body.usersLiked,
-    usersDisliked: req.body.usersDisliked
-  });
+
 
   Sauce.updateOne({_id: req.params.id}, {...sauceObject, _id: req.params.id}) 
   .then(
